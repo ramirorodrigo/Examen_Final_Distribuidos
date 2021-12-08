@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if form.errors %}
+
+        <div class="alert alert-danger" role="alert">
+            Error!! intenta nuevamente.
+        </div>
+    {% endif %}
+
+    <h1>Registro de Asignaturas </h1><br>
+        <br>
+
+    <form action="{% url 'guardarAsignatura' %}" method="POST">
+        {% csrf_token %}
+        {% if mensaje %}
+            <div class="alert alert-succes" role="alert">
+                Asignatura agregada Satisfactiriamente!
+            </div>
+        {% endif %}
+        
+        {{ form }}
+        
+
+        <br><button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'baseprog.html' %}
+
+{% block content %}
+
+    {% if form.errors %}
+
+        <div class="alert alert-danger" role="alert">
+            Error!! intenta nuevamente.
+        </div>
+    {% endif %}
+
+    <h1>Programando Materias </h1><br>
+        <br>
+
+    <form action="{% url 'guardarprog' %}" method="POST">
+        {% csrf_token %}
+        {% if mensaje %}
+            <div class="alert alert-succes" role="alert">
+                Programacion realizad Satisfactiriamente!
+            </div>
+        {% endif %}
+        
+        {{ form }}
+        
+
+        <br><button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+{% endblock %}

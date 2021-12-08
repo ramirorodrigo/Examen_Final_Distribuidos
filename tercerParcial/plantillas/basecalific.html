@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <title>Docentes</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+ 
+    <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+	
+    <link href="{% static 'css/general.css' %}" rel="stylesheet">
+	
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+	<link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+	
+
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}"> 
+	
+	<script src="{% static 'js/modernizr-2.8.3.min.js' %}"></script> 
+</head>
+<body bgcolor="red">
+    {% include 'admins/test.html' %}
+    {% include 'admins/base_css.html' %}
+    {% include 'admins/base_js.html' %}
+    <style type="text/css">
+        .main{
+            min-height: 100vh;
+            height: 100%;
+        }
+    </style>
+    <div class="main">
+        {% block content %}
+        <h3 align="center">Bienvebid@s a la aplicacion de Docentes</h3> <br>
+        <h5 align="center">(Calificaciones de estudiantes)</h5> 
+    <table align="center" width="80%">
+        <thead>
+            <tr>
+                <th><img class="account-image rounded-circle m-auto d-block dropdown" id="id_profile_links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="{% static 'imagenes/calific.jpg' %}" alt="imagenes logo" width="300" height="300"></th>
+            </tr>
+        </thead>
+        <tbody align="center">
+            <tr>
+                <td><br><li><a href="{% url 'calificando' %}" class="btn  btn-lg mybutton_cyano wow fadeIn" data-wow-delay="0.8s"><span class="network-name">Entregar Notas</span></a>
+				</li></td>
+            </tr>
+        </tbody>
+    </table>
+        {% endblock content %}
+    </div>
+    {% include 'admins/footer.html' %}
+
+    <script src="{% static 'bootstrap/js/jquery.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

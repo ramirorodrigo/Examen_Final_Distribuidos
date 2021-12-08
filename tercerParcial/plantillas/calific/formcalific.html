@@ -1,0 +1,28 @@
+{% extends 'basecalific.html' %}
+
+{% block content %}
+
+    {% if form.errors %}
+
+        <div class="alert alert-danger" role="alert">
+            Error!! intenta nuevamente.
+        </div>
+    {% endif %}
+
+    <h1>Calificaciones </h1><br>
+        <br>
+
+    <form action="{% url 'guardarcalific' %}" method="POST">
+        {% csrf_token %}
+        {% if mensaje %}
+            <div class="alert alert-succes" role="alert">
+                Calificacion realizada Satisfactiriamente!
+            </div>
+        {% endif %}
+        
+        {{ form }}
+        
+
+        <br><button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+{% endblock %}
